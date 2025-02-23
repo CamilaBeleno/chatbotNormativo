@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHATBOT_NORMATIVO</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1>🔹 TESAMERICA - Chat Normativo 🔹</h1>
+        </header>
+        
+        <div id="welcome-message" class="bot-message">👋 ¡Hola! Soy tu asistente normativo. Pregúntame cualquier cosa sobre regulaciones.</div>
+
+        <div class="chat-content" id="chat-content">
+            <!-- Aquí se mostrarán los mensajes del chat -->
+        </div>
+
+        <footer>
+            <div class="chat-input">
+                <input type="text" id="user-input" class="typing" placeholder="Escribe tu mensaje...">
+                <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

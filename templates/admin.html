@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preguntas contestadas</title>
+</head>
+<body>
+    <h1>Preguntas contestadas</h1>
+    <table>
+        <tr>
+            <th>Usuario</th>
+            <th>Pregunta</th>
+            <th>Respuesta</th>
+            <th>Eliminar</th>
+        </tr>
+        {% for conversation in answered %}
+            <tr>
+                <td>{{ conversation.user }}</td>
+                <td>{{ conversation.user_message }}</td>
+                <td>{{ conversation.bot_response}}</td>
+                <td>
+                    <form action="/delete_question" method="POST">
+                        <input type="hidden" name="question" value="{{ conversation.user_message }}">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
