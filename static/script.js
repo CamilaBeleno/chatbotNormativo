@@ -73,10 +73,12 @@ document.querySelector("button").addEventListener("click", function() {
     sendMessage();
 });
 
-function showWelcomeMessage() {
-    const welcomeMessage = document.getElementById("welcome-message");
-    welcomeMessage.style.display = "block"; // Mostrar el mensaje
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const chatContent = document.getElementById("chat-content");
 
-// Mostrar el mensaje de bienvenida al cargar la página
-window.addEventListener("load", showWelcomeMessage);
+    const welcomeMessage = document.createElement("div");
+    welcomeMessage.classList.add("bot-message");
+    welcomeMessage.innerHTML = "👋 ¡Hola! Soy NormaBot, tu asistente normativo. Pregúntame cualquier cosa sobre regulaciones.";
+
+    chatContent.appendChild(welcomeMessage);
+});

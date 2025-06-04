@@ -28,9 +28,7 @@ def get_answered_conversations():
 
 @app.route("/delete_question", methods=["POST"])
 def delete_question():
-    question_to_delete = request.form.get("question")  # Obtiene la pregunta a eliminar desde el formulario
-
-    # Busca la pregunta en la lista de preguntas y elimínala
+    question_to_delete = request.form.get("question")  
     for conversation in conversations:
         if conversation["user_message"] == question_to_delete:
             conversations.remove(conversation)
